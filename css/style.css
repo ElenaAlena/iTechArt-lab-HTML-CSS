@@ -77,26 +77,28 @@ a:visited {
   color: var(--base-red);
 }
 .nav-item {
-  position: relative;
+  /*position: relative;*/
   font-size: 12px;
   line-height: 14px;
   letter-spacing: -0.026em;
-  padding: 0 16px;
 }
-@media (m9n-width: 376px) {
-  .nav-item:not(:first-child)::after {
+@media (min-width: 627px) {
+  .nav-item:not(:last-child) .nav-link::after {
     content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
     height: 2px;
     width: 2px;
     background-color: #fff;
     border-radius: 50%;
+    align-self: center;
+    margin-left:16px;
   }
 }
 .nav-link {
   text-transform: uppercase;
+  display: flex;
+}
+.nav-item:not(:last-child) .nav-link{
+  padding-right: 14px;
 }
 .nav-link:hover {
   color: #fff;
@@ -366,17 +368,23 @@ a:visited {
   }
   .tag {
     margin-right: 10px;
-    padding: 4px 5px;
+    padding: 4px 6px;
   }
   .portfolio-items {
     grid-template-columns: 1fr 1fr 1fr;
     padding: 28px 0 15px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 627px) {
   body {
     position: relative;
   }
+  .services-section{
+    padding: 0 33px;
+  }
+  .services-section__header {
+    padding-top: 25px;
+}
   .navbar{
       border-bottom: none;
   }
@@ -384,19 +392,19 @@ a:visited {
     font-size: 19.6875px;
     line-height: 24px;
     letter-spacing: -0.03em;
-    position: relative;
-    /*z-index: 101;*/
     padding: 0;
-    margin-left: 25%;
+    flex: 1;
+    text-align: center;
+    margin-right: 37px;
+  }
+  .modal .navbar-brand-static{
+    visibility: hidden;
   }
   .modal__navbar-brand{
       display: block;
   }
   .modal__navbar-brand{
     margin: 24px 0 0 30%;
-  }
-  .modal .navbar-brand{
-      /*margin-left: 5%;*/
   }
   .navbar-toggle {
     display: block;
@@ -405,7 +413,7 @@ a:visited {
     position: relative;
     z-index: 101;
     transition: transform 0.6s ease-in-out;
-    margin: 26px 0px 25px 20px;
+    margin: 26px 0px 25px 16px;
   }
   .navbar-toggle__icon {
     width: 25px;
@@ -486,15 +494,28 @@ a:visited {
   .services-block {
     grid-template-columns: 1fr;
     margin-right: 0px;
-    grid-row-gap: 15px;
+    grid-row-gap: 14px;    
+    padding: 30px 0 13px;
+  }
+  .services-block__item-description__text{
+    margin-right: 0;
   }
   .portfolio-section {
     border: none;
-    padding-bottom: 27px;
+    padding: 0 30px 27px
+  }
+  .portfolio-section__header{
+    padding-top: 42px;
+  }
+  
+  .portfolio-section__tags {
+    margin-top: 16px;
   }
   .portfolio-items {
     grid-template-columns: 1fr 1fr;
-  }
+    padding: 25px 0 15px;
+    grid-gap: 13px
+  }  
   .footer__copyright {
     display: none;
   }
