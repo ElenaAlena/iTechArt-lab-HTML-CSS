@@ -95,6 +95,9 @@ a:visited {
     align-self: center;
     margin-left:16px;
   }
+  .nav-item:last-child .nav-link {
+    padding-right: 16px;
+  }
 }
 .nav-link {
   text-transform: uppercase;
